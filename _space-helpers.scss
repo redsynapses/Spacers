@@ -2,13 +2,8 @@
  * Spacing helpers
  * Best way to use it as a @extend to not litter markup:
  * .myButton
- *   @text-rendering:  .pvxl //padding vertical x-large
+ *   @extend  .pvxl //padding vertical x-large
  *   will give you: padding-top: 4rem; padding-bottom: 4rem;
- *
- * With the current default settings, generates classes like:
- * .mts = margin-top: 0.5rem
- * .phl = padding-left: 2rem; padding-right: 2rem; // h = horizontal = left/right
- *
  *
  */
 $sizeUnit: rem;
@@ -25,7 +20,7 @@ $positions: (
   l: 'left',
 );
 $sizes: (
-  n: 0,
+  none: 0,
   xxs: 0.125,
   xs: 0.25,
   s: 0.5,
@@ -34,24 +29,6 @@ $sizes: (
   xl: 4,
   xxl: 8,
 );
-
-/*
-// Defaults for bootstrap-style, see: https://getbootstrap.com/docs/4.0/utilities/spacing/
-$separator: '-';
-$allKey: '';
-$verticalKey: 'y';
-$horizontalKey: 'x';
-// Bootstrap uses different size steps:
-$sizes: (
-  0: 0,
-  1: 0.25,
-  2: 0.5,
-  3: 1,
-  4: 1.5,
-  5: 4,
-  auto: 'auto',
-);
-*/
 
 @function size-value($value) {
   @if $value == 0 { @return $value; }
